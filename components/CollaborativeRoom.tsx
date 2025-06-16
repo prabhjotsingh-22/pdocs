@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
 
-const CollaborativeRoom = () => {
+const CollaborativeRoom = ({roomId, roomMetadata}: CollaborativeRoomProps) => {
   return (
     <RoomProvider id="my-room">
         <ClientSideSuspense fallback={<div>Loading…</div>}>
