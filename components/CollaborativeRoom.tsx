@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
 
-const CollaborativeRoom = ({roomId, roomMetadata}: CollaborativeRoomProps) => {
+const CollaborativeRoom = ({roomId, roomMetadata, users, currentUserType}: CollaborativeRoomProps) => {
   return (
     <RoomProvider id="my-room">
         <ClientSideSuspense fallback={<div>Loading…</div>}>
@@ -20,7 +20,7 @@ const CollaborativeRoom = ({roomId, roomMetadata}: CollaborativeRoomProps) => {
             <UserButton />
           </SignedIn>
         </Header>
-        <Editor />
+        <Editor roomId={roomId} currentUserType={currentUserType}/>
           </div>
         </ClientSideSuspense>
       </RoomProvider>

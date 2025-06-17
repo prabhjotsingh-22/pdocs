@@ -29,7 +29,7 @@
     "@liveblocks/client": "^2.24.2",
     "@liveblocks/node": "^2.24.2",
     "@liveblocks/react": "^2.24.2",
-    "@liveblocks/react-lexical": "^2.24.2",
+    "@liveblocks/react-lexical": "^2.24.3",
     "@liveblocks/react-ui": "^2.24.2",
     "@radix-ui/react-slot": "^1.2.2",
     "class-variance-authority": "^0.7.1",
