@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@liveblocks/react-ui/styles.css';
-@import '@liveblocks/react-lexical/styles.css';
+/* @import '@liveblocks/react-ui/styles.css';
+@import '@liveblocks/react-lexical/styles.css'; */
 
 @import '../styles/dark-theme.css';
 
@@ -147,7 +147,7 @@
   }
 
   .loader {
-    @apply flex w-full h-screen items-center justify-center gap-3 text-white;
+    @apply flex size-full h-screen items-center justify-center gap-3 text-white;
   }
 
   /* ======================== Auth Pages */
@@ -166,7 +166,7 @@
 
   /* ======================== CollaborativeRoom */
   .collaborative-room {
-    @apply flex h-full max-h-screen flex-1 flex-col items-center overflow-hidden;
+    @apply flex size-full max-h-screen flex-1 flex-col items-center overflow-hidden;
   }
 }
 
@@ -279,6 +279,7 @@
   padding: 12px;
   border-radius: 4px;
   font-size: 14px;
+  color: white;
 }
 
 .lb-comment-date,
@@ -312,4 +313,74 @@
 
 .lb-elevation {
   background: #0f1c34;
+}
+
+.lb-root,
+.lb-comment,
+.lb-thread-comments,
+.lb-composer,
+.lb-comment-reaction {
+  background-color: #181f2e !important;
+  color: #fff !important;
+}
+
+.lb-comment-content {
+  background: #0b1527 !important;
+  color: #b4c6ee !important;
+}
+
+.lb-comment-author,
+.lb-comment-date {
+  color: #b4c6ee !important;
+}
+
+.lb-button {
+  background-color: #232e47 !important;
+  color: #b4c6ee !important;
+}
+
+.lb-composer-editor  {
+  color: #b4c6ee !important;
+  caret-color: #b4c6ee !important;
+  background: #181f2e !important;
+}
+
+.lb-comment-content,
+.lb-comment-content *,
+.lb-thread-comments,
+.lb-thread-comments *,
+.lb-comment,
+.lb-comment * {
+  color: #b4c6ee !important;
+  /* background: #181f2e !important; */
+}
+
+.lb-composer-editor,
+.lb-composer-editor *,
+.lb-composer-editor [contenteditable="true"],
+.lb-composer-editor [contenteditable="true"] * {
+  color: #b4c6ee !important;
+  background: #181f2e !important;
+  caret-color: #b4c6ee !important;
+}
+
+.lb-dropdown-item-label,
+.lb-dropdown-item-label * {
+  color: #b4c6ee !important;
+  background: #181f2e !important;
+}
+
+.lb-dropdown-item,
+.lb-dropdown-item * {
+  color: #b4c6ee !important;
+  background: #181f2e !important;
+}
+
+.lb-dropdown-item:hover,
+.lb-dropdown-item *:hover {
+  background: rgb(11, 21, 39) !important;
+}
+
+.lb-lexical-thread-mark{
+  color: #b4c6ee !important;
 }

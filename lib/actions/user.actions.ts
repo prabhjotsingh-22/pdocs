@@ -2,7 +2,9 @@
 
 import { clerkClient } from "@clerk/nextjs/server";
 import { parseStringify } from "../utils";
-import liveblocks from "../liveblocks";
+import {liveblocks} from "../liveblocks";
+
+const DEFAULT_AVATAR = "/assets/icons/user.svg";
 
 export const getClerkUsers = async ({ userIds }: { userIds: string[] }) => {
   try {
@@ -11,12 +13,18 @@ export const getClerkUsers = async ({ userIds }: { userIds: string[] }) => {
       emailAddress: userIds,
     });
 
-    const users = data.map((user: any) => ({
-      id: user.id,
-      name: `${user.firstName} ${user.lastName}`,
-      email: user.emailAddresses[0].emailAddress,
-      avatar: user.imageUrl,
-    }));
+    const users = data.map((user: any) => {
+      let avatar = user.imageUrl;
+      if (!avatar || typeof avatar !== 'string' || avatar.endsWith('.pdf') || avatar.endsWith('.docx')) {
+        avatar = DEFAULT_AVATAR;
+      }
+      return {
+        id: user.id,
+        name: `${user.firstName} ${user.lastName}`,
+        email: user.emailAddresses[0].emailAddress,
+        avatar,
+      };
+    });
 
     const sortedUsers = userIds.map((email) =>
       users.find((user: any) => user.email === email)
